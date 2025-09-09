@@ -4,11 +4,12 @@
  $student = new student();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
+    $course = $_POST['course'];
 
-    if($student->create($first_name, $last_name, $email)){
+    if($student->create($id,$name, $email, $course)){
         echo 'script>alert("Student record created successfully.");</script>';
         header("Location: index.php");
     }else{
@@ -40,6 +41,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+        <div class="mb-3">
+      <label for="course" class="form-label">Course</label>
+      <input type="text" class="form-control" id="course" name="course" required>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
     <a href="index.php" class="btn btn-secondary">Cancel</a>

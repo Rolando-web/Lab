@@ -24,6 +24,7 @@ $students = $student->readALL();
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
+        <th>Course</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -31,9 +32,9 @@ $students = $student->readALL();
       <?php foreach($students as $student): ?>
       <tr>
         <td><?php echo $student['id'];?></td>
-        <td><?php echo $student['first_name']; ?></td>
-        <td><?php echo $student['last_name']; ?></td>
+        <td><?php echo $student['name']; ?></td>
         <td><?php echo $student['email']; ?></td>
+        <td><?php echo $student['course']; ?></td>
         <td>
           <a href="update.php?id=<?php echo $student['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
           <a href="delete.php?id=<?php echo $student['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>

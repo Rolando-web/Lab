@@ -4,17 +4,17 @@ require_once 'database.php';
 
 class student {
     private $conn;
-    private $table_name = 'tbl_student';
+    private $table_name = 'student';
 
     public function __construct() {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
 
-    public function create($first_name, $last_name, $email) {
-        $sql = "INSERT INTO " . $this->table_name . " (first_name, last_name, email) VALUES(:first_name, :last_name, :email)";
+    public function create($id, $name, $email, $course) {
+        $sql = "INSERT INTO " . $this->table_name . " (id, name, email, course) VALUES(:id, :name, :email, :course)";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute(['first_name' => $first_name, 'last_name' => $last_name, 'email' => $email]);
+        return $stmt->execute(['id' => $id, 'name' => $name, 'email' => $email, 'course' => $course]);
     }
 
     public function readALL() {
@@ -31,9 +31,9 @@ class student {
     }
 
     public function update($id, $first_name, $last_name, $email) {
-        $sql = "UPDATE " . $this->table_name . " SET first_name = :first_name, last_name = :last_name, email = :email WHERE id = :id";
+        $sql = "UPDATE " . $this->table_name . " SET id = :id, name = :name, email = :email, course = :course WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute(['first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'id' => $id]);
+        return $stmt->execute(['id' => $id, 'name' => $name, 'email' => $email, 'course' => $course, 'id' => $id]);
     }
 
     public function delete($id) {

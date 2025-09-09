@@ -6,9 +6,10 @@
  $data = $student->getByID($id);
 
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
+    $course = $_POST['course'];
 
     if($student->update($id, $first_name, $last_name, $email)){
         echo '<script>alert("Student record updated successfully.");</script>';
@@ -38,9 +39,13 @@
       <label for="last_name" class="form-label">Last Name</label>
       <input type="text" class="form-control" id="last_name" value ="<?= htmlspecialchars($data['last_name']) ?>" name="last_name" required>
     </div>
-    <div class="mb-3">
+     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" value ="<?= htmlspecialchars($data['email']) ?>" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="course" class="form-label">Course</label>
+      <input type="text" class="form-control" id="course" value ="<?= htmlspecialchars($data['course']) ?>" name="course" required>
     </div>
     <button type="submit" class="btn btn-primary">update</button>
     <a href="index.php" class="btn btn-secondary">Cancel</a>
