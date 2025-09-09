@@ -7,6 +7,7 @@ class Database{
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
+    private $conn;
 
     public function __construct(){
       $this->connect();
@@ -25,5 +26,6 @@ class Database{
         return $this->conn;
     }
 }
+
 
 ?>
