@@ -31,11 +31,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   <h1 class="mb-4">Create Student Record</h1>
   <form method="POST">
     <div class="mb-3">
-      <label for="first_name" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="first_name" name="first_name" required>
+      <label for="id" class="form-label">ID</label>
+      <input type="text" class="form-control" id="id" name="id" required>
     </div>
     <div class="mb-3">
-      <label for="last_name" class="form-label">Last Name</label>
+      <label for="last_name" class="form-label">Name</label>
       <input type="text" class="form-control" id="last_name" name="last_name" required>
     </div>
     <div class="mb-3">
