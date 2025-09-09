@@ -21,8 +21,7 @@ $students = $student->readALL();
     <thead>
       <tr>
         <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Course</th>
         <th>Actions</th>
@@ -43,6 +42,8 @@ $students = $student->readALL();
       <?php endforeach; ?>
     </tbody>
   </table>
+
+  <a href="login.php">Logout</a>
 
 </body>
 </html>

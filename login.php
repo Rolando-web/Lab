@@ -11,8 +11,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  if($auth->login($email, $password)){
-    header('Location: dashboard.php');
+  if($student->login($email, $password)){
+    header('Location: index.php');
     exit;
   } else {
     $message = 'Invalid email or password';

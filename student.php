@@ -30,7 +30,7 @@ class student {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $first_name, $last_name, $email) {
+    public function update($id, $name, $email, $course) {
         $sql = "UPDATE " . $this->table_name . " SET id = :id, name = :name, email = :email, course = :course WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute(['id' => $id, 'name' => $name, 'email' => $email, 'course' => $course, 'id' => $id]);

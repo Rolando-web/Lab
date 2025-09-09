@@ -35,8 +35,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <input type="text" class="form-control" id="id" name="id" required>
     </div>
     <div class="mb-3">
-      <label for="last_name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="last_name" name="last_name" required>
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>

@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $password = $_POST['password'];
 
 
-  if($auth->register($email, $password)){
+  if($student->register($email, $password)){
     header('Location: login.php');
     exit;
 
